@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - HomePage - Great Bebia</title>
+    <meta name="description" content="WDD 231 - Web Frontend Development 1 - Great Okie Bebia. This is a course homepage demonstrating my prerequisite knowledge of HTML, CSS, and JavaScript.">
+    <meta name="author" content="Great Bebia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <script src="scripts/homepage.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="images/Me.jpg" alt="An image of myself" loading="lazy">
+        </div>
+        <h1>Great O. Bebia</h1>
+        <button id="menu" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Chamber</a></li>
+                <li><a href="">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/great-bebia-97650b1b0">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Course Work</h2>
+            <div class="categories">
+                <button id="all-courses">All</button>
+                <button id="wdd-courses">WDD</button>
+                <button id="cse-courses">CSE</button>
+            </div>
+            <div class="courses"></div>
+            <p>Total Credits: <span id="total-credits"></span></p>
+        </section>        
+    
+        <section class="lagos">
+            <h2>Lagos, Nigeria</h2>
+            <img src="images/Eko_Pearl_Towers.png" alt="Eko Pearl Towers" loading="lazy">
+            <p>Eko Pearl Towers</p>
+        </section>
+    
+        <section class="certificate">
+            <h2>Web and Programming Certificate</h2>
+            <div class="categories">
+                <h3>All</h3>
+                <h3>CSE</h3>
+                <h3>WDD</h3>
+            </div>
+            <div class="courses">
+                <h4>CSE 110</h4>
+                <h4>WDD 130</h4>
+                <h4>CSE 111</h4>
+                <h5>CSE 210</h5>
+                <h4>WDD 131</h4>
+                <h5>WDD 231</h5>
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Great Okie Bebia. Nigeria.</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
