@@ -11,21 +11,30 @@
 
     <meta property="og:title" content="Lagos Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/lagos.">
+    <meta property="og:image" content="images/lagos.jpeg">
     <meta property="og:url" content="https://yourchamberwebsite.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
+    <script src="scripts/chamber.js" defer></script>
 </head>
 <body>
 
     <header>
         <h1>Lagos Chamber of Commerce</h1>
+        <button id="menu" aria-label="Toggle navigation">☰</button>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="discover.html">Discover</a>
-            <a href="directory.html">Directory</a>
-            <a href="join.html">Join</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -40,9 +49,7 @@
 
     <footer>
         <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
-        <p>WDD 231 | <span id="last-modified"></span></p>
+        <p>Great Bebia | WDD 231 | <span id="last-modified"></span></p>
     </footer>
-
-    <script src="scripts/chamber.js"></script>
 </body>
 </html>

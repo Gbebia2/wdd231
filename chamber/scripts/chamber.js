@@ -1,36 +1,60 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("last-modified").textContent = document.lastModified;
 
+const menuButton = document.getElementById('menu');
+const header = document.querySelector('header');
+
+menuButton.addEventListener('click', () => {
+    header.classList.toggle('show-nav');
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const directoryContainer = document.getElementById("directory-container");
     const gridViewBtn = document.getElementById("grid-view");
     const listViewBtn = document.getElementById("list-view");
 
-    async function fetchBusinesses() {
-        const response = await fetch("members.json");
-        const businesses = await response.json();
-        displayBusinesses(businesses);
+    // Use a single fetch method to get members
+    async function getMembers() {
+        try {
+            const response = await fetch("data/members.json");
+            const members = await response.json();
+            displayMembers(members);
+        } catch (error) {
+            console.error('Error fetching member data:', error);
+        }
     }
 
-    function displayBusinesses(businesses) {
-        directoryContainer.innerHTML = "";
-        businesses.forEach(business => {
-            const card = document.createElement("div");
-            card.classList.add("business-card");
-            card.innerHTML = `
-                <img src="${business.image}" alt="${business.name}">
-                <h3>${business.name}</h3>
-                <p>${business.address}</p>
-                <p>${business.phone}</p>
-                <a href="${business.website}" target="_blank">Visit Website</a>
+    // Display members in grid or list format
+    function displayMembers(members) {
+        directoryContainer.innerHTML = ""; // Clear any previous content
+
+        members.forEach(member => {
+            const memberCard = document.createElement('div');
+            memberCard.classList.add('member-card');
+            memberCard.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
+                <h3>${member.name}</h3>
+                <p>Address: ${member.address}</p>
+                <p>Phone: ${member.phone}</p>
+                <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+                <p>Membership Level: ${member.membership_level === 1 ? 'Member' : member.membership_level === 2 ? 'Silver' : 'Gold'}</p>
+                <p>${member.additional_info}</p>
             `;
-            directoryContainer.appendChild(card);
+            directoryContainer.appendChild(memberCard);
         });
     }
 
-    gridViewBtn.addEventListener("click", () => directoryContainer.classList.add("grid"));
-    listViewBtn.addEventListener("click", () => directoryContainer.classList.remove("grid"));
+    // Toggle between grid and list views
+    gridViewBtn.addEventListener('click', () => {
+        directoryContainer.classList.add('grid-view');
+        directoryContainer.classList.remove('list-view');
+    });
 
-    fetchBusinesses();
+    listViewBtn.addEventListener('click', () => {
+        directoryContainer.classList.add('list-view');
+        directoryContainer.classList.remove('grid-view');
+    });
+
+    // Initialize the page
+    getMembers();
 });
