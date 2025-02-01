@@ -4,7 +4,7 @@
         "address": "123 Lagos St, Lagos",
         "phone": "(123) 456-7890",
         "website": "https://www.lagosbookstore.com",
-        "image": "bookstore.jpg",
+        "images": "bookstore.jpg",
         "membership_level": 3,
         "additional_info": "Gold member with premium benefits"
     },
