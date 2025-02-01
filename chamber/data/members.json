@@ -13,7 +13,7 @@
         "address": "456 Innovation Rd, Lagos",
         "phone": "(321) 654-0987",
         "website": "https://www.techhublagos.com",
-        "image": "techhub.jpg",
+        "images": "techhub.jpg",
         "membership_level": 2,
         "additional_info": "Silver member"
     },
@@ -22,7 +22,7 @@
         "address": "789 Green St, Lagos",
         "phone": "(555) 123-4567",
         "website": "https://www.lagosgreengrocers.com",
-        "image": "grocers.jpg",
+        "images": "grocers.jpg",
         "membership_level": 1,
         "additional_info": "Basic member"
     },
@@ -31,7 +31,7 @@
         "address": "321 Art Ave, Lagos",
         "phone": "(123) 789-4560",
         "website": "https://www.lagosartgallery.com",
-        "image": "artgallery.jpg",
+        "images": "artgallery.jpg",
         "membership_level": 3,
         "additional_info": "Gold member with exhibitions"
     },
@@ -40,7 +40,7 @@
         "address": "654 Health Rd, Lagos",
         "phone": "(234) 567-8901",
         "website": "https://www.lagosfitnesscenter.com",
-        "image": "fitnesscenter.jpg",
+        "images": "fitnesscenter.jpg",
         "membership_level": 2,
         "additional_info": "Silver member"
     },
@@ -49,7 +49,7 @@
         "address": "135 Fashion St, Lagos",
         "phone": "(876) 543-2109",
         "website": "https://www.lagosfashionboutique.com",
-        "image": "boutique.jpg",
+        "images": "boutique.jpg",
         "membership_level": 1,
         "additional_info": "Basic member"
     },
@@ -58,7 +58,7 @@
         "address": "246 Café Rd, Lagos",
         "phone": "(987) 654-3210",
         "website": "https://www.lagoscafe.com",
-        "image": "cafe.jpg",
+        "images": "cafe.jpg",
         "membership_level": 3,
         "additional_info": "Gold member with discounts"
     }
