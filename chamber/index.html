@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Chamber of Commerce | Home</title>
+    <meta name="description" content="Promoting local businesses and fostering community growth in Lagos.">
+    <meta name="author" content="Great Bebia">
+    
+    <link rel="icon" type="image/ico" href="images/flag.ico">
+
+    <meta property="og:title" content="Lagos Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/lagos.jpeg">
+    <meta property="og:url" content="https://lagoschamberofcommerce.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <script src="scripts/chamber.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Lagos Chamber of Commerce</h1>
+        <button id="menu" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Empowering Lagos Businesses</h2>
+                <p>Connecting entrepreneurs, fostering growth, and building a stronger Lagos.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Current Events -->
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li><strong>Business Networking Night:</strong> February 15, 2025</li>
+                <li><strong>Entrepreneur Workshop:</strong> March 3, 2025</li>
+                <li><strong>Lagos Economic Summit:</strong> April 10, 2025</li>
+            </ul>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Current Weather in Lagos</h2>
+            <p id="weather-temp"></p>
+            <p id="weather-desc"></p>
+            <div id="weather-forecast"></div>
+        </section>
+
+        <!-- Business Spotlights -->
+        <section class="spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-container" id="spotlight-container">
+                <!-- Spotlight cards will load here via JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
+        <p>Great Bebia | WDD 231 | <span id="last-modified"></span></p>
+    </footer>
+
+</body>
+</html>

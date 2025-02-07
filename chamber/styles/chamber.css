@@ -5,6 +5,25 @@ body {
     background-color: #ffffff;
 }
 
+.cta {
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    display: block;
+    width: max-content;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta:hover {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+
 header {
     display: flex;
     align-items: center;
@@ -12,6 +31,24 @@ header {
     background-color: #004080;
     color: white;
     padding: 1rem;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background: url('../images/lagos_skyline.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 nav {
@@ -89,6 +126,19 @@ main {
     border: 1px solid #ddd;
     padding: 20px;
     width: calc(33% - 20px); /* For grid view */
+}
+
+.weather, .spotlight, .events {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.spotlight .member-card {
+    width: calc(50% - 20px); /* Smaller spotlights */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #directory-container.list-view .member-card {
