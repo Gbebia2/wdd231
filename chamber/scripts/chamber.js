@@ -88,4 +88,52 @@ function displaySpotlights(members) {
 document.addEventListener('DOMContentLoaded', () => {
     getWeather();
     getSpotlights();
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const directoryContainer = document.getElementById("directory-container");
+        const gridViewBtn = document.getElementById("grid-view");
+        const listViewBtn = document.getElementById("list-view");
+
+        async function getMembers() {
+            try {
+                const response = await fetch("data/members.json");
+                const members = await response.json();
+                displayMembers(members);
+            } catch (error) {
+                console.error('Error fetching member data:', error);
+            }
+        }
+
+        function displayMembers(members) {
+            directoryContainer.innerHTML = ""; // Clear previous content
+
+            members.forEach(member => {
+                const memberCard = document.createElement('div');
+                memberCard.classList.add('member-card');
+                memberCard.innerHTML = `
+                    <img src="images/${member.images}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>Address: ${member.address}</p>
+                    <p>Phone: ${member.phone}</p>
+                    <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+                    <p>Membership Level: ${member.membership_level === 1 ? 'Member' : member.membership_level === 2 ? 'Silver' : 'Gold'}</p>
+                    <p>${member.additional_info}</p>
+                `;
+                directoryContainer.appendChild(memberCard);
+            });
+        }
+
+        gridViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('grid-view');
+            directoryContainer.classList.remove('list-view');
+        });
+
+        listViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('list-view');
+            directoryContainer.classList.remove('grid-view');
+        });
+
+        // Run directory feature
+        getMembers();
+    });
 });
