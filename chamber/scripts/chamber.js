@@ -1,8 +1,12 @@
 // Footer: Update year and last modified date
 document.addEventListener('DOMContentLoaded', () => {
+    // Update the year
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Update the last modified date
     document.getElementById("last-modified").textContent = document.lastModified;
 });
+
 
 // Toggle navigation menu for mobile
 const menuButton = document.getElementById('menu');
@@ -44,13 +48,14 @@ function displayWeather(data) {
     forecastContainer.innerHTML = forecastHTML;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    getWeather();
+});
+
 // Display random business spotlights
 async function getSpotlights() {
     try {
-        const response = await fetch('chamber/data/members.json'); // Ensure the correct path
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        const response = await fetch('data/members.json');
         const members = await response.json();
         const spotlightMembers = members.filter(member => member.membership_level === 2 || member.membership_level === 3);
         displaySpotlights(randomizeSpotlights(spotlightMembers));
@@ -79,56 +84,56 @@ function displaySpotlights(members) {
     });
 }
 
-// Directory Page Functions
-async function getMembers() {
-    try {
-        const response = await fetch("chamber/data/members.json"); // Ensure the correct path
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const members = await response.json();
-        displayMembers(members);
-    } catch (error) {
-        console.error('Error fetching member data:', error);
-    }
-}
-
-function displayMembers(members) {
-    const directoryContainer = document.getElementById("directory-container");
-    directoryContainer.innerHTML = ""; // Clear previous content
-
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card');
-        memberCard.innerHTML = `
-            <img src="images/${member.images}" alt="${member.name}">
-            <h3>${member.name}</h3>
-            <p>Address: ${member.address}</p>
-            <p>Phone: ${member.phone}</p>
-            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p>Membership Level: ${member.membership_level === 1 ? 'Member' : member.membership_level === 2 ? 'Silver' : 'Gold'}</p>
-            <p>${member.additional_info}</p>
-        `;
-        directoryContainer.appendChild(memberCard);
-    });
-}
-
+// Initialize functions when content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     getWeather();
     getSpotlights();
-    getMembers();
 
-    const gridViewBtn = document.getElementById("grid-view");
-    const listViewBtn = document.getElementById("list-view");
-    const directoryContainer = document.getElementById("directory-container");
+    document.addEventListener("DOMContentLoaded", () => {
+        const directoryContainer = document.getElementById("directory-container");
+        const gridViewBtn = document.getElementById("grid-view");
+        const listViewBtn = document.getElementById("list-view");
 
-    gridViewBtn.addEventListener('click', () => {
-        directoryContainer.classList.add('grid-view');
-        directoryContainer.classList.remove('list-view');
-    });
+        async function getMembers() {
+            try {
+                const response = await fetch("data/members.json");
+                const members = await response.json();
+                displayMembers(members);
+            } catch (error) {
+                console.error('Error fetching member data:', error);
+            }
+        }
 
-    listViewBtn.addEventListener('click', () => {
-        directoryContainer.classList.add('list-view');
-        directoryContainer.classList.remove('grid-view');
+        function displayMembers(members) {
+            directoryContainer.innerHTML = ""; // Clear previous content
+
+            members.forEach(member => {
+                const memberCard = document.createElement('div');
+                memberCard.classList.add('member-card');
+                memberCard.innerHTML = `
+                    <img src="images/${member.images}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p>Address: ${member.address}</p>
+                    <p>Phone: ${member.phone}</p>
+                    <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+                    <p>Membership Level: ${member.membership_level === 1 ? 'Member' : member.membership_level === 2 ? 'Silver' : 'Gold'}</p>
+                    <p>${member.additional_info}</p>
+                `;
+                directoryContainer.appendChild(memberCard);
+            });
+        }
+
+        gridViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('grid-view');
+            directoryContainer.classList.remove('list-view');
+        });
+
+        listViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('list-view');
+            directoryContainer.classList.remove('grid-view');
+        });
+
+        // Run directory feature
+        getMembers();
     });
 });
