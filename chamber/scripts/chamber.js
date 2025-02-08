@@ -69,7 +69,7 @@ function randomizeSpotlights(members) {
 }
 
 function displaySpotlights(members) {
-    const spotlightsContainer = document.getElementById('spotlights');
+    const spotlightsContainer = document.getElementById('spotlight-container');
     members.forEach(member => {
         const spotlight = document.createElement('div');
         spotlight.classList.add('spotlight');
