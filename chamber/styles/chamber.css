@@ -31,7 +31,7 @@ header {
     background-color: #004080;
     color: white;
     padding: 1rem;
-    position: relative; /* Ensure the header has its own stacking context */
+    position: relative;
     z-index: 10;
 }
 
@@ -110,29 +110,127 @@ main {
     padding: 1rem;
 }
 
-/* Basic styles for the directory container */
 #directory-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Grid view: display items in grid format */
 #directory-container.grid-view {
     flex-direction: row;
 }
 
-/* List view: stack items vertically */
 #directory-container.list-view {
     flex-direction: column;
 }
 
-/* Member card styles */
-.member-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: calc(33% - 20px); /* For grid view */
+.membership-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
+
+.membership-container {
+    display: flex;
+    flex-direction: column; /* Mobile first */
+    gap: 20px;
+    align-items: center;
+}
+
+.membership-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+
+/* Staggered Animation Delay */
+.np { animation-delay: 0.2s; }
+.bronze { animation-delay: 0.4s; }
+.silver { animation-delay: 0.6s; }
+.gold { animation-delay: 0.8s; }
+
+/* Keyframes for Animation */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-card button {
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #fff;
+    color: darkblue;
+    cursor: pointer;
+}
+
+.membership-card button:hover {
+    opacity: 0.8;
+}
+
+/* Colors for different membership levels */
+.np { background: #4CAF50; } /* Green */
+.bronze { background: #CD7F32; } /* Bronze */
+.silver { background: #C0C0C0; } /* Silver */
+.gold { background: #FFD700; } /* Gold */
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+}
+
+/* Fix Close (×) Button Position & Visibility */
+.close {
+    position: absolute;
+    top: -10px; /* Moves it slightly outside the modal */
+    right: -10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    background: #ffffff; /* Add background for contrast */
+    border: 2px solid #003366; /* Make it stand out */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect */
+.close:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    border-color: #ff0000;
+}
+
 
 .weather, .spotlight, .events {
     background-color: #f4f4f4;
@@ -142,13 +240,13 @@ main {
 }
 
 .spotlight .member-card {
-    width: calc(50% - 20px); /* Smaller spotlights */
+    width: calc(50% - 20px);
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #directory-container.list-view .member-card {
-    width: 100%; /* For list view */
+    width: 100%;
 }
 
 footer {
@@ -182,99 +280,10 @@ footer {
     }
 
     nav ul li a:hover {
-        background-color: #ffffff; /* Change to the desired background color */
-        color: #003366; /* Change to the desired text color */
+        background-color: #ffffff;
+        color: #003366;
         border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #004080;
-    color: white;
-    padding: 1rem;
-    position: relative; /* Ensure the header has its own stacking context */
-    z-index: 10; /* Ensure the header appears above other elements */
-}
-
-nav {
-    position: relative;
-    z-index: 20; /* Ensure the nav has a higher stacking order than the hero */
-}
-
-nav ul {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #ffffff;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    z-index: 30; /* Ensure the ul is above the hero */
-}
-
-.hero {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    background: url('../images/lagos_skyline.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    z-index: 1; /* Ensure the hero stays in the background */
-}
-
-#menu {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 40; /* Ensure the menu button is above all other elements */
-}
-
-#menu:focus {
-    outline: none;
-}
-
-.show-nav nav ul {
-    display: block;
-}
-
-@media (min-width: 500px) {
-    #menu {
-        display: none;
-    }
-
-    nav ul {
-        display: flex;
-        position: static;
-        box-shadow: none;
-        background-color: transparent;
-    }
-
-    nav ul li {
-        border-bottom: none;
-        margin-right: 1rem;
-    }
-
-    nav ul li a {
-        color: #ffffff;
-        padding: 0;
-    }
-
-    nav ul li a:hover {
-        background-color: #ffffff; /* Change to the desired background color */
-        color: #003366; /* Change to the desired text color */
-        border-radius: 5px;
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
-    }
-}

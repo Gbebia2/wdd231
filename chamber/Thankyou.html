@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Lagos Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/chamber.css">
+</head>
+<body>
+
+    <header>
+        <h1>Thank You for Joining!</h1>
+    </header>
+
+    <main>
+        <p>We appreciate your application. Here’s what you submitted:</p>
+        <ul id="submitted-data"></ul>
+        <a href="index.html">Return to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const dataList = document.getElementById("submitted-data");
+
+        params.forEach((value, key) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${key}: ${value}`;
+            dataList.appendChild(listItem);
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

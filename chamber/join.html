@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Chamber of Commerce | Home</title>
+    <meta name="description" content="Promoting local businesses and fostering community growth in Lagos.">
+    <meta name="author" content="Great Bebia">
+    
+    <link rel="icon" type="image/ico" href="images/flag.ico">
+
+    <meta property="og:title" content="Lagos Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="chamber/images/lagos.jpg">
+    <meta property="og:url" content="https://gbebia2.github.io/wdd231/chamber/join.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <script src="scripts/join.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Lagos Chamber of Commerce</h1>
+        <button id="menu" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="membership-container"></div>
+        <section>
+            <h2>Join the Lagos Chamber of Commerce</h2>
+            <p>Fill out the form below to apply for membership.</p>
+    
+            <form action="thankyou.html" method="get">
+                <label>First Name:
+                    <input type="text" name="first-name" required title="Enter your first name" autocomplete="given-name">
+                </label>
+    
+                <label>Last Name:
+                    <input type="text" name="last-name" required title="Enter your last name" autocomplete="family-name">
+                </label>
+    
+                <label>Organizational Title:
+                    <input type="text" name="organization-title" title="Your position in the organization" 
+                        autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" placeholder="CEO, Manager, etc.">
+                </label>
+    
+                <label>Email:
+                    <input type="email" name="email" required title="Enter a valid email" autocomplete="email" placeholder="example@mail.com">
+                </label>
+    
+                <label>Phone Number:
+                    <input type="tel" name="phone" required title="Enter a valid phone number" autocomplete="tel">
+                </label>
+    
+                <label>Business Name:
+                    <input type="text" name="organization" required title="Enter your business/organization name" autocomplete="organization">
+                </label>
+    
+                <fieldset>
+                    <legend>Select Membership Level:</legend>
+                    <label><input type="radio" name="membership" value="np"> Non-Profit (Free)</label>
+                    <label><input type="radio" name="membership" value="bronze"> Bronze</label>
+                    <label><input type="radio" name="membership" value="silver"> Silver</label>
+                    <label><input type="radio" name="membership" value="gold"> Gold</label>
+                </fieldset>
+    
+                <label>Business Description:
+                    <textarea name="description" title="Briefly describe your business"></textarea>
+                </label>
+    
+                <input type="hidden" name="timestamp" id="timestamp">
+                
+                <button type="submit">Apply Now</button>
+            </form>
+        </section>
+
+        <section class="membership-levels">
+            <div class="membership-card np">
+                <h3>NP Membership</h3>
+                <p>For non-profit organizations. No fee required.</p>
+                <button class="learn-more" data-modal="npModal">Learn More</button>
+            </div>
+        
+            <div class="membership-card bronze">
+                <h3>Bronze Membership</h3>
+                <p>Entry-level membership with essential benefits.</p>
+                <button class="learn-more" data-modal="bronzeModal">Learn More</button>
+            </div>
+        
+            <div class="membership-card silver">
+                <h3>Silver Membership</h3>
+                <p>Enhanced benefits including networking events.</p>
+                <button class="learn-more" data-modal="silverModal">Learn More</button>
+            </div>
+        
+            <div class="membership-card gold">
+                <h3>Gold Membership</h3>
+                <p>Premium membership with full access to all benefits.</p>
+                <button class="learn-more" data-modal="goldModal">Learn More</button>
+            </div>
+        </section>
+        
+        <!-- Modal Structure -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>NP Membership</h3>
+                <p>Designed for non-profits looking to connect with businesses. No fee required.</p>
+            </div>
+        </div>
+        
+        <div id="bronzeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Bronze Membership</h3>
+                <p>Basic access to resources, newsletters, and limited event invitations.</p>
+            </div>
+        </div>
+        
+        <div id="silverModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Silver Membership</h3>
+                <p>Includes all Bronze benefits plus priority event access and business promotions.</p>
+            </div>
+        </div>
+        
+        <div id="goldModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Gold Membership</h3>
+                <p>All Silver benefits, plus premium business support and exclusive networking.</p>
+            </div>
+        </div>                
+    </main>
+    
+
+    <footer>
+        <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
+        <p>Great Bebia | WDD 231 | <span id="last-modified"></span></p>
+    </footer>
+
+</body>
+</html>
