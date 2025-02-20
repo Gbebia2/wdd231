@@ -1,0 +1,51 @@
+[
+    {
+      "name": "National Museum Lagos",
+      "address": "Onikan, Lagos Island, Lagos, Nigeria",
+      "description": "The National Museum Lagos offers a deep dive into Nigeria's rich history, showcasing artifacts from various periods and cultures.",
+      "image": "images/national_museum_lagos.webp"
+    },
+    {
+      "name": "Lekki Conservation Centre",
+      "address": "Km 19 Lekki-Epe Expressway, Lekki Peninsula, Lagos, Nigeria",
+      "description": "A serene nature reserve featuring a canopy walkway, diverse wildlife, and lush vegetation, perfect for nature enthusiasts.",
+      "image": "images/lekki_conservation_centre.webp"
+    },
+    {
+      "name": "Freedom Park Lagos",
+      "address": "Old Prison Ground, Broad Street, Lagos Island, Lagos, Nigeria",
+      "description": "A memorial and leisure park offering live music, arts exhibitions, and a rich history as a former colonial prison.",
+      "image": "images/freedom_park_lagos.webp"
+    },
+    {
+      "name": "Terra Kulture",
+      "address": "1376 Tiamiyu Savage St, Victoria Island, Lagos, Nigeria",
+      "description": "A cultural center promoting Nigerian art, theater, and cuisine, providing visitors with an immersive cultural experience.",
+      "image": "images/terra_kulture.webp"
+    },
+    {
+      "name": "Nike Art Gallery",
+      "address": "2 Elegushi Rd, Lekki Phase I, Lagos, Nigeria",
+      "description": "One of Nigeria's largest art galleries, showcasing a vast collection of traditional and contemporary African art.",
+      "image": "images/nike_art_gallery.webp"
+    },
+    {
+      "name": "Tarkwa Bay Beach",
+      "address": "Tarkwa Bay, Lagos, Nigeria",
+      "description": "A sheltered beach accessible by boat, known for its tranquil environment and ideal surfing conditions.",
+      "image": "images/tarkwa_bay_beach.webp"
+    },
+    {
+      "name": "Cathedral Church of Christ Marina",
+      "address": "29 Marina Rd, Lagos Island, Lagos, Nigeria",
+      "description": "An architectural masterpiece and one of the oldest Anglican cathedrals in Nigeria, offering spiritual solace and historical insights.",
+      "image": "images/cathedral_church_of_christ_marina.webp"
+    },
+    {
+      "name": "Balogun Market",
+      "address": "Balogun St, Lagos Island, Lagos, Nigeria",
+      "description": "A bustling open-air market renowned for a wide array of goods, from textiles to electronics, embodying Lagos's vibrant commerce.",
+      "image": "images/balogun_market.webp"
+    }
+  ]
+  

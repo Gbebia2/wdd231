@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Chamber of Commerce | Discover</title>
+    <meta name="description" content="Discover key attractions and features of Lagos.">
+    <meta name="author" content="Great Bebia">
+    
+    <link rel="icon" type="image/ico" href="images/flag.ico">
+
+    <meta property="og:title" content="Lagos Chamber of Commerce - Discover">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/lagos.jpeg">
+    <meta property="og:url" content="https://lagoschamberofcommerce.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <script src="scripts/discover.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Lagos Chamber of Commerce</h1>
+        <button id="menu" aria-label="Toggle navigation">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Discover Lagos</h2>
+        <p id="visit-message"></p>
+        <div id="discover-container"></div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
+        <p>Great Bebia | WDD 231 | <span id="last-modified"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("last-modified").textContent = document.lastModified;
+    </script>
+
+</body>
+</html>

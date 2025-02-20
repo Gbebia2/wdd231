@@ -23,6 +23,13 @@ body {
     color: #ffffff;
 }
 
+.discover-container {
+    display: grid;
+    gap: 20px;
+    padding: 1rem;
+    justify-content: center;
+}
+
 
 header {
     display: flex;
@@ -351,5 +358,109 @@ footer {
     .membership-card {
         max-width: 300px; 
     }
+}
+
+
+
+
+
+/* Medium Screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .discover-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1025px) {
+    .discover-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.discover-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px; /* Limits card size */
+    margin: auto;
+}
+
+.discover-card:hover {
+    transform: scale(1.05);
+}
+
+.discover-card figure {
+    margin: 0;
+    text-align: center;
+}
+
+.discover-card img {
+    height: auto;
+    border-radius: 5px;
+    max-width: 100%; /* Ensures the image never overflows */
+    height: auto;
+}
+
+/* Hover Effect (Disabled for Mobile) */
+@media (min-width: 641px) {
+    .discover-card img:hover {
+        filter: brightness(80%);
+        transform: scale(1.1);
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+}
+
+.discover-card h2 {
+    font-size: 1.2rem;
+    color: #004080;
+    margin: 10px 0;
+}
+
+.discover-card address {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.discover-card p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.discover-card button {
+    background-color: #004080;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.discover-card button:hover {
+    background-color: #002a5c;
+}
+
+/* === Visitor Message Styling === */
+.visitor-message {
+    background: #ffcc00;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* === Responsive Sidebar (if needed) === */
+.sidebar {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
