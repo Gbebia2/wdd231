@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marathon training plans for all levels - beginners to advanced.">
-    <title>Training Plans | Marathon Mastery</title>
+    <meta name="description" content="Contact Marathon Mastery for any inquiries or support.">
+    <title>Contact - Marathon Mastery</title>
     <meta name="author" content="Great Bebia">
     
     <link rel="icon" type="image/ico" href="images/marathon-mastery.ico">
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/training.css">
+    <link rel="stylesheet" href="styles/contact.css">
     <script src="scripts/marathon-mastery.js" defer></script>
 </head>
 <body>
@@ -27,40 +27,36 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="training.html">Training Plans</a></li>
                 <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="join.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero contact-hero">
             <div class="hero-text">
-                <h2>Training Plans</h2>
-                <p>Structured plans to help you train smarter and run stronger.</p>
+                <h2>Get in Touch</h2>
+                <p>Have questions? Need advice? We're here to help!</p>
             </div>
         </section>
     
-        <section class="training-plans">
-            <article class="plan">
-                <h3>Beginner Plan</h3>
-                <p>Perfect for first-time marathoners. Focus on building endurance gradually.</p>
-                <a href="beginner-plan.html" class="btn">View Plan</a>
-            </article>
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="thankyou.html" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
 
-            <article class="plan">
-                <h3>Intermediate Plan</h3>
-                <p>Designed for those who have run before and want to improve.</p>
-                <a href="intermediate-plan.html" class="btn">View Plan</a>
-            </article>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <article class="plan">
-                <h3>Advanced Plan</h3>
-                <p>For experienced runners aiming for peak performance.</p>
-                <a href="advanced-plan.html" class="btn">View Plan</a>
-            </article>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </section>
-    
     </main>
 
     <footer>
